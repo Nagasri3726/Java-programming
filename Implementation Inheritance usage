@@ -1,0 +1,48 @@
+import java.util.Scanner;
+class Person {
+    protected String name;
+    protected int age;
+    public void getInfo() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the name: ");
+        name = scanner.nextLine();
+
+        System.out.print("Enter the age: ");
+        age = scanner.nextInt();
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+//Complete the code
+    // Complete the code
+    class Student extends Person {
+        private int rollNumber;
+        @Override
+        public void getInfo() {
+            // First, call the parent class getInfo() to get name and age
+            super.getInfo();
+            // Then, get the roll number specific to Student
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter the roll number: ");
+            rollNumber = sc.nextInt();
+        }
+        @Override
+        public void displayInfo() {
+            // First, call the parent class displayInfo() to print name and age
+            super.displayInfo();
+
+            // Then, print the roll number
+            System.out.println("Roll Number: " + rollNumber);
+        }
+    }
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.getInfo();
+        student.displayInfo();
+    }
+}
