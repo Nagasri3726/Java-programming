@@ -10,6 +10,7 @@ public class PalindroneOrNot {
                 reverse += original.charAt(i);
             }
             // Check for palindrome (case-sensitive as per instructions)
+
             if (original.equals(reverse)) {
                 System.out.println("The given string " + original + " is a palindrome");
             } else {
