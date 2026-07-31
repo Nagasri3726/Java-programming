@@ -1,0 +1,19 @@
+package q11187;
+public class StringFormatting {
+    public static void main(String[] args) {
+        float dVar = 3.141f;
+        //write your code here..
+        // A simple floating-point number.
+        System.out.printf("%f\n", dVar);
+        // With three decimal places.
+        System.out.printf("%.3f\n", dVar);
+        // With two decimal places.
+        System.out.printf("%.2f\n", dVar);
+        // With four decimal places and a total width of 8 characters.
+        // (Padded with leading zeros to meet the width requirement)
+        System.out.printf("%08.4f\n", dVar);
+        // With four decimal places, a total width of 8 characters,
+        // and a plus sign for positive values.
+        System.out.printf("%+08.4f\n", dVar);
+    }
+}
