@@ -1,0 +1,20 @@
+package q11184;
+public class PalindroneOrNot {
+    public static void main(String[] args) {
+        // Check if a command line argument is provided
+        if (args.length > 0) {
+            String original = args[0];
+            String reverse = "";
+            // Reverse the string
+            for (int i = original.length() - 1; i >= 0; i--) {
+                reverse += original.charAt(i);
+            }
+            // Check for palindrome (case-sensitive as per instructions)
+            if (original.equals(reverse)) {
+                System.out.println("The given string " + original + " is a palindrome");
+            } else {
+                System.out.println("The given string " + original + " is not a palindrome");
+            }
+        }
+    }
+}
