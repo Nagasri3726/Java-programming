@@ -1,0 +1,24 @@
+package q36047;
+public class A {
+    // Inner class B
+    class B {
+        B() {
+            System.out.println("In inner class B's constructor");
+        }
+    }
+    // Static nested class C
+    static class C {
+        C() {
+            System.out.println("In static nested class C's constructor");
+        }
+    }
+    public static void main(String[] args) {
+        // a. Create an instance of B
+        // by instantiating A and calling new B()
+        A aObject = new A();
+        A.B bObject = aObject.new B();
+        // b. Create an instance of C
+        // by calling new A.C()
+        A.C cObject = new A.C();
+    }
+}
