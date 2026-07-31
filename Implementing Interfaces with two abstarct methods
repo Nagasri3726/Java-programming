@@ -1,0 +1,71 @@
+package q11284;
+interface Car {
+    // Abstract methods
+    String getName();
+    int getMaxSpeed();
+
+    // Default method
+    default void applyBreak() {
+        System.out.println("Applying break on " + getName());
+    }
+    // Static method
+    static Car getFastestCar(Car car1, Car car2) {
+        if (car1.getMaxSpeed() >= car2.getMaxSpeed()) {
+            return car1;
+        } else {
+            return car2;
+        }
+    }
+}
+class BMW implements Car {
+    private String name;
+    private int maxSpeed;
+
+    BMW(String name, int maxSpeed) {
+        this.name = name;
+        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+}
+class Audi implements Car {
+    private String name;
+    private int maxSpeed;
+
+    Audi(String name, int maxSpeed) {
+        this.name = name;
+        this.maxSpeed = maxSpeed;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+}
+public class MainApp {
+    public static void main(String[] args) {
+        // Parsing command line arguments
+        String name1 = args[0];
+        int speed1 = Integer.parseInt(args[1]);
+        String name2 = args[2];
+        int speed2 = Integer.parseInt(args[3]);
+        // Creating objects
+        BMW bmw = new BMW(name1, speed1);
+        Audi audi = new Audi(name2, speed2);
+
+        // Finding the fastest car using the static method in interface
+        Car fastest = Car.getFastestCar(bmw, audi);
+        System.out.println("Fastest car is : " + fastest.getName());
+    }
+}
